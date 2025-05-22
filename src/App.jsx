@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './Home';
 import Characters from './Characters';
-import CharacterPage from './CharacterPage';
+import CharacterPage from './Characterpage';
 import QuestionSetup from './QuestionSetup';
 import CategoryPage from './CategoryPage';
 import AnalysisPage from './AnalysisPage';
