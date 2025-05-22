@@ -28,7 +28,7 @@ export default function CharacterPage() {
     if (!voiceId) return;
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/text-to-speech',
+        'https://speakeasy-be.onrender.com/api/text-to-speech',
         { text, voiceId },
         { responseType: 'blob' }
       );
@@ -54,7 +54,7 @@ export default function CharacterPage() {
     if (loading || !name) return;
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/character-start', { name });
+      const res = await axios.post('https://speakeasy-be.onrender.com/api/character-start', { name });
       const generatedQuestion = res.data.question;
       setQuestion(generatedQuestion);
 
@@ -82,7 +82,7 @@ export default function CharacterPage() {
   // Load next question
   const loadFollowupQuestion = async (userInput) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/followup', { userInput });
+      const res = await axios.post('https://speakeasy-be.onrender.com/api/followup', { userInput });
       const nextQuestion = res.data.followupQuestion;
       setQuestion(nextQuestion);
 

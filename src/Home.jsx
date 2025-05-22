@@ -30,7 +30,7 @@ useEffect(() => {
   const textToSpeech = async (text, voiceId) => {
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/text-to-speech',
+        'https://speakeasy-be.onrender.com/api/text-to-speech',
         { text, voiceId : 'JBFqnCBsd6RMkjVDRZzb' },
         { responseType: 'blob' }
       );
@@ -53,7 +53,7 @@ useEffect(() => {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/start');
+      const res = await axios.post('https://speakeasy-be.onrender.com/api/start');
       const generatedQuestion = res.data.question;
       setQuestion(generatedQuestion);
 
@@ -101,7 +101,7 @@ useEffect(() => {
     const fallbackPrompt =
       "The user went silent or didn't say anything. Please respond in a friendly and casual way like 'Hey, are you gonna say something or not?'";
 
-    const res = await axios.post('http://localhost:5000/api/followup', {
+    const res = await axios.post('https://speakeasy-be.onrender.com/api/followup', {
       userInput: fallbackPrompt,
     });
 
@@ -114,7 +114,7 @@ useEffect(() => {
 /********************Loading the followup question......... */
   const loadFollowupQuestion = async (userInput) => {
     try {
-      const res = await axios.post('http://localhost:5000/api/followup', { userInput });
+      const res = await axios.post('https://speakeasy-be.onrender.com/api/followup', { userInput });
       const nextQuestion = res.data.followupQuestion;
       setQuestion(nextQuestion);
 
@@ -129,7 +129,7 @@ useEffect(() => {
 
   const analyzeConversation = async () => {
   try {
-    const res = await axios.post('http://localhost:5000/api/analyze', { conversation });
+    const res = await axios.post('https://speakeasy-be.onrender.com/api/analyze', { conversation });
     console.log('Analysis result:', res.data);
     navigate('/analysis', { state: { analysis: res.data.analysis } });
   } catch (err) {
