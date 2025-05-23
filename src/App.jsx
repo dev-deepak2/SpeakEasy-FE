@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './Home';
+import CharacterPage from './CharacterPage';
 import Characters from './Characters';
 import QuestionSetup from './QuestionSetup';
 import CategoryPage from './CategoryPage';
 import AnalysisPage from './AnalysisPage';
-import CharacterPage from './CharacterPage';
 import { useState } from 'react';
 
 function App() {
