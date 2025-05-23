@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import Home from './Home';
-import CharacterPage from './CharacterPage';
+import CharacterPage from './CharFour';
 import Characters from './Characters';
 import QuestionSetup from './QuestionSetup';
 import CategoryPage from './CategoryPage';
